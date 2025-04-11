@@ -1,13 +1,14 @@
 const express = require('express')
-const mongoose = require('mongoose')
+const database = require("./config/database")
 
 const app = express()
 
-require("dotenv").config()
+require("dotenv").config();
+database.connect();
 const port = process.env.PORT 
 const route = require("./routes/client/index.route")
 
-mongoose.connect(process.env.MONGO_URL);
+
 
 app.set("views","./views")
 app.set("view engine","pug")
