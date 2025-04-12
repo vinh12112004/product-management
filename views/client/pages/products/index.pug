@@ -16,8 +16,8 @@ block main
                                 src = item.thumbnail
                                 alt =  item.title 
                             )
-                        .inner-content 
+                        .inner-content
                             h3.inner-title #{item.title}
                             .inner-price-new #{item.priceNew} $
                             .inner-price-ole #{item.price}$
-                            .inner-discount -#{item.discountPercentage}%
+                            .inner-discount.badge.bg-danger -#{item.discountPercentage}%
