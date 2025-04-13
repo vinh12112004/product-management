@@ -14,3 +14,18 @@ if(buttonStatus.length > 0){
         
     });
 };
+
+const searchForm = document.querySelector("#search-form");
+if(searchForm){
+    let url = new  URL(window.location.href);
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const keyword = e.target.keyword.value;
+        if(keyword){
+            url.searchParams.set("keyword",keyword);
+        }else{
+            url.searchParams.delete("keyword");
+        }
+        window.location.href = url.href;
+    })
+}

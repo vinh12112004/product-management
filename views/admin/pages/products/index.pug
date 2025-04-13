@@ -4,12 +4,33 @@ block main
 
     .card.mb-3 
         .card-header Bộ lọc và Tìm kiếm 
-        .card-body 
-            each item in filterStatus
-                button(
-                    class=`btn btn-sm ml-1 btn-outline-success ${item.class}`
-                    btn-status= item.status
-                ) #{item.name}
+        .card-body
+            .row 
+                .col-auto 
+                    each item in filterStatus
+                        button(
+                            class=`btn btn-sm ml-1 btn-outline-success ${item.class}`
+                            btn-status= item.status
+                        ) #{item.name}
+                .col-auto
+                    form(id="search-form")
+                        .input-group 
+                            input(
+                                type="text"
+                                placeholder="Nhập từ khoá"
+                                name="keyword"
+                                class="form-control"
+                                value= keyword
+                            )
+
+                            .input-group-appennd 
+                                button(
+                                    class="btn btn-success"
+                                    type="submit"
+                                ) Tìm
+
+
+
             
     .card.mb-3 
         .card-header Danh sách sản phẩm
